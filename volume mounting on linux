@@ -1,0 +1,30 @@
+
+
+ Modify the volume to extend root volume
+ #sudo growpart /dev/xvda 1
+ #df -h 
+ #sudo xfs_growfs /dev/xvda1 
+ #df -hT -> show file system
+ 
+ for extending partion 
+ #sudo resize2fs /dev/xvda1
+ #df -h
+ create a directory for mounting a volume 
+ #mkdir /EFS
+ #ls
+ #mount /dev/xvdf /EFS  ---> gave error because we didnt create a file system for xvdf volume 
+Note :-> it is necessary to create a file system using below command 
+          and then mount it ext4 is a file type  
+ #sudo mkfs -t ext4  /dev/xvdf 
+ #mount /dev/xvdf /EFS
+ #df -hT
+ #history
+
+mounting 
+
+mkfs.ext4 /dev/xvdb
+
+mount 
+ 
+
+

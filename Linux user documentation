@@ -1,0 +1,71 @@
+
+Creating a sudo user ?
+
+open a linux server 
+
+#adduser username 
+#passwd username 
+
+Set password prompts:
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+For sudo user change the usermod in terminal 
+
+#usermod -aG wheel username 
+
+Note:-> vi /etc/sudoers
+1)for without password sudo 
+   uncomment this #wheel  :-> ## Same thing without a password
+                              #%wheel ALL=(ALL)       NOPASSWD: ALL
+2)for password sudo 
+   uncomment this # wheel :-> ## Allows people in group wheel to run all commands
+                              #%wheel  ALL=(ALL)       ALL
+
+for giving ssh to given user 
+
+1)make a directory in <newuser> name is .ssh/authorized_keys/copy
+2) copy the publickey from root directory in .ssh/authorized_keys/paste
+   give permission to that directory chmod 700 .ssh && chmod 600 .ssh/authorized_keys                                                  
+                                     
+3) paste that publickey in user vi .ssh/authorized_keys
+
+Now test on server using the new user ( ssh -i public_keys newuser@ipaddress)
+
+Add user in sudo priveliges 
+
+#useradd rohan
+#passwd rohan
+#Newpassword : rohan@123
+
+add the user in wheel group 
+#usermod -aG wheel username(rohan) 
+
+-a = append the user in group 
+
+Verficiation : check : cat /etc/group   (find wheel group)
+
+User allow without pemfile the following configuration 
+# vi /etc/ssh/sshd_config    --- uncomment the PasswordAuthentication yes
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
+#PermitEmptyPasswords no
+#PasswordAuthentication no
+
+# sshd -t
+# service sshd restart 
+
+Login to ec2 using user without pem file  
+
+
+
+
+
+
+
+
+
+
+
+

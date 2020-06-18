@@ -1,0 +1,117 @@
+Linux
+ 
+File handing basic 
+#ls -listing file 
+#cd foldername  -> change directory
+#cd /           --> rootnodes tree structure
+#pwd             --> print working directory
+
+two types of path --  relative path , absolute path 
+
+#mkdir Rohan  ----make directory name  
+#touch 1.txt  ----> create blank file
+#mv 1.txt this/ --> move file one to another
+#cp 1.txt this/ --> copy file one to another
+#cp /home/1.txt /home/harry2/
+# pwd 
+
+User in linux?
+1) $ Regular user --> home directory
+2) # Root user or super user --> Full access, user admin, sudo 
+3) service user have own account (apache2)
+
+Absolute vs Relative path
+ 
+          / -> root node 
+  bin     etc     apps 
+f1  f0
+
+cd fo2  --> relative path
+cd /bin/f02  ---> Absolute path
+
+# sudo apt-get update  -> apt - software install only update
+# sudo apt-get upgrade ---> upgrade install the whole software
+# ls -r ---> listing file + subdirectory r-> recurssive
+# touch .file ---> hidden file 
+# ls -a   ---> show hidden file
+# ls -lart ?
+# clear   --> clean the terminal only scroll happen 
+# history  --> show history 
+# echo harry
+# printf harry ---> print the terminal 
+# terminal can make case sensitivity file to reuse the same name 
+
+we can make multiple user in linux 
+ 
+ls -l  ---> show permission 
+
+ user(owner)  group  public(other)
+    rwx        rwx      rwx
+
+
+chmod calculator to give permission multiple user 
+#chmod 777 
+read    4 
+write   2
+execute 1
+ Total  7 
+
+#chgrp is use to change group
+# ps   -> listing the process 
+# ps -a -> listing the background process 
+# Top --> show the resource consume 
+# ps -ef --> 
+# top  ---> show the firefox(id)copy that id to stop it 
+# kill id --> kill the process 
+# ls
+
+
+install vim editor (texteditior)
+# sudo su install vim 
+# vim harry.txt 
+I-insert  
+
+write text 
+
+esc:wq!
+ 
+w-save
+q-quit 
+!-
+
+for compress and zipping folder command 
+# tar -cvf test.tar test   ---> compress the folder -c vf-flag
+# tar -xvf test.tar        ----> extract the compress folder -x vf-flag
+# tar -cvfz test.tar.gz test   ----> tar.gz file  -cvfz  
+
+netstat network statistatic
+# netstat -a --show all the connection tcp udp 
+# netstat -a | less
+# netstat -at | less --tcp
+# netstat -au | less  --> udp
+# netstat -l | less   --> listing port 
+# netstat -lt | less  ---> listing tcp an -lu listing udp 
+# netstat -s |less    ---> static like packet outgoing st su ,tcp and udp 
+
+SCP 
+
+host pc to remote server 
+#scp rohan.txt ec2-user@IPaddress:/home/bite  press enter 
+#scp -r dirname ec2-user@ipaddress:/home/bite
+
+remoteserver to localmachine
+# scp ec2-user@ipaddress(remoteserver):/home/filename destinationfolderpath 
+scp --help 
+#-P 1234 (-i publickey)  
+
+
+
+
+
+
+
+
+
+
+
+
